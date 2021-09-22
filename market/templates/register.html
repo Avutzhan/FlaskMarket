@@ -1,14 +1,15 @@
 {% extends 'base.html' %}
-
 {% block title %}
-    Register Page
+Register Page
 {% endblock %}
 
 {% block content %}
 <body class="text-center">
     <h1>Create Your Account</h1>
     <div class="container">
-        <form action="POST">
+        <form method="POST">
+            {{ form.hidden_tag() }}
+
             {{ form.username.label(class="form-label") }}
             {{ form.username(class="form-control", placeholder="Username") }}
 
@@ -26,5 +27,4 @@
         </form>
     </div>
 </body>
-
 {% endblock %}
