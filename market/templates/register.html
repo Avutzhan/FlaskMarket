@@ -22,6 +22,7 @@ Register Page
             {{ form.password2.label(class="form-label") }}
             {{ form.password2(class="form-control", placeholder="Confirm") }}
 
+            <p>Already have an account? <a class="nav-link" href="{{ url_for('login_page') }}">Login</a></p>
             <br>
             {{ form.submit(class="btn btn-outline-success") }}
         </form>
