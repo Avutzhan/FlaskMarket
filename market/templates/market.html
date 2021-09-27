@@ -1,36 +1,48 @@
 {% extends 'base.html' %}
 
 {% block title %}
-    Market Page
+Market Page
 {% endblock %}
 
 {% block content %}
-    <table class="table">
-      <thead>
-        <tr>
-          <th scope="col">ID</th>
-          <th scope="col">Name</th>
-          <th scope="col">Barcode</th>
-          <th scope="col">Price</th>
-          <th scope="col">Options</th>
-
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          {% for item in items %}
+<div class="row" style="margin-top:20px; margin-left:20px;">
+    <div class="col-8">
+        <h3>Available on Market</h3>
+        <p>Click on one of the items to start buying</p>
+        <table class="table bg-light">
+            <thead>
             <tr>
-              <td>{{ item.id }}</td>
-              <td>{{ item.name }}</td>
-              <td>{{ item.barcode }}</td>
-              <td>{{ item.price }}$</td>
-              <td>
-                <button class="btn btn-outline-info">Info</button>
-                <button class="btn btn-outline-success">Purchase</button>
-              </td>
-            </tr>
-          {% endfor %}
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Barcode</th>
+                <th scope="col">Price</th>
+                <th scope="col">Options</th>
 
-      </tbody>
-    </table>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                {% for item in items %}
+            <tr>
+                <td>{{ item.id }}</td>
+                <td>{{ item.name }}</td>
+                <td>{{ item.barcode }}</td>
+                <td>{{ item.price }}$</td>
+                <td>
+                    <button class="btn btn-outline-info">Info</button>
+                    <button class="btn btn-outline-success">Purchase</button>
+                </td>
+            </tr>
+            {% endfor %}
+
+            </tbody>
+        </table>
+    </div>
+    <div class="col-4">
+      <h3>Owned Items</h3>
+      <p>Click on sell item to put item back to the market</p>
+    </div>
+</div>
+
+
 {% endblock %}
