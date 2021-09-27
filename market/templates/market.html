@@ -30,8 +30,8 @@ Market Page
                 <td>{{ item.barcode }}</td>
                 <td>{{ item.price }}$</td>
                 <td>
-                    <button class="btn btn-outline-info" data-bs-toggle="modal" data-bs-target="#exampleModal">Info</button>
-                    <button class="btn btn-outline-success">Purchase</button>
+                    <button class="btn btn-outline-info" data-bs-toggle="modal" data-bs-target="#exampleModal-{{ item.id }}">Info</button>
+                    <button class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#examplePurchase-{{ item.id }}">Purchase</button>
                 </td>
             </tr>
             {% endfor %}

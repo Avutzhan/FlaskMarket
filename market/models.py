@@ -21,7 +21,7 @@ class User(db.Model, UserMixin):
         if len(str(self.budget)) >= 4:
             return "{:,}".format(self.budget)
         else:
-            return self.budget + "$"
+            return f'{self.budget}$'
 
 
     @property
